@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruitment Process Overhaul: A Visual Game Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 1.25rem;
+            left: -0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            border-width: 2px;
+            border-color: #ef5675;
+            background-color: #f1f5f9;
+            z-index: 10;
+        }
+        .timeline-line {
+            position: absolute;
+            top: 1.25rem;
+            left: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #ef5675;
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            line-height: 1;
+            color: #7a5195;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#003f5c] mb-2">Recruitment Process Overhaul</h1>
+            <p class="text-lg text-[#374c80]">A 6-Week Game Plan for Hiring Excellence</p>
+        </header>
+
+        <main>
+            <section id="crisis" class="mb-16">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center text-[#bc5090] mb-2">The Crisis: A Revolving Door</h2>
+                    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">Our recruitment process, optimized for speed, has led to a critical business problem: a staggering number of new hires are leaving almost immediately. This isn't just a leak; it's a flood that costs us time, money, and morale.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-[#7a5195] mb-2">First-Week Attrition Rate</h3>
+                            <div class="text-8xl font-extrabold text-[#ef5675]">80%</div>
+                            <p class="text-gray-600 mt-2">of new hires leave within the first 3 days of employment.</p>
+                        </div>
+                        <div>
+                            <div class="chart-container">
+                                <canvas id="attritionChart"></canvas>
+                            </div>
+                            <p class="text-center text-sm text-gray-500 mt-2">This visualization shows the dramatic imbalance between hires who leave and those who stay past the first week.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mission" class="mb-16">
+                 <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center text-[#bc5090] mb-2">The New Mission: From Volume to Value</h2>
+                     <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">To solve our attrition crisis, we are fundamentally shifting our definition of success. We are moving away from celebrating speed and focusing on what truly matters: hiring quality candidates who stay, grow, and contribute to our culture.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6 text-center">
+                             <div class="text-5xl mb-4">📉</div>
+                            <h3 class="text-xl font-bold text-red-800 mb-2">The Old KPI (Discontinued)</h3>
+                            <p class="text-2xl font-semibold text-red-600">Offers Per Day</p>
+                            <p class="text-red-700 mt-2">This metric incentivized speed above all else, leading to poor-quality hires and high turnover.</p>
+                        </div>
+                        <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center">
+                            <div class="text-5xl mb-4">📈</div>
+                            <h3 class="text-xl font-bold text-green-800 mb-2">Our New North Star Metric</h3>
+                            <p class="text-2xl font-semibold text-green-600">30-Day Retention Rate</p>
+                            <p class="text-green-700 mt-2">This metric aligns our team's goals with the company's need for stable, engaged, and long-term employees.</p>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="gameplan" class="mb-16">
+                <h2 class="text-3xl font-bold text-center text-[#bc5090] mb-8">The 6-Week Implementation Timeline</h2>
+                <div class="relative pl-4">
+                    <div class="timeline-line"></div>
+                    <div class="space-y-12">
+                        <div class="timeline-item relative pl-8">
+                            <h3 class="text-xl font-bold text-[#003f5c]">Phase 0: Foundation & Kickoff <span class="text-base font-normal text-gray-500">(This Week)</span></h3>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Conduct "State of Recruitment" meeting to align the team.</li>
+                                <li>Officially discontinue the old KPI system.</li>
+                                <li>Form a "Process Tiger Team" to champion the change.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item relative pl-8">
+                            <h3 class="text-xl font-bold text-[#374c80]">Sprint 1: Process Redesign <span class="text-base font-normal text-gray-500">(2 Weeks)</span></h3>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Rewrite all 6 job descriptions for radical transparency.</li>
+                                <li>Create the new "Mutual Fit" 30-minute interview guide.</li>
+                                <li>Define the mandatory hiring manager touchpoint process.</li>
+                                <li>Build the 30-Day Retention Rate tracking sheet.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item relative pl-8">
+                            <h3 class="text-xl font-bold text-[#7a5195]">Sprint 2: Training & Pilot Program <span class="text-base font-normal text-gray-500">(2 Weeks)</span></h3>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Host a mandatory team training workshop with role-playing.</li>
+                                <li>Launch the new process with 2 pilot roles to test and learn.</li>
+                                <li>Conduct daily 15-minute check-ins to gather feedback.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item relative pl-8">
+                             <h3 class="text-xl font-bold text-[#bc5090]">Sprint 3: Full Rollout & Review <span class="text-base font-normal text-gray-500">(2 Weeks)</span></h3>
+                            <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+                                <li>Analyze pilot learnings and refine the process.</li>
+                                <li>Implement the new process across all roles.</li>
+                                <li>Review the first retention data to measure early success.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="new-process" class="mb-16">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center text-[#bc5090] mb-2">Our New Recruitment Flow</h2>
+                    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">This revised workflow is designed to build trust, set clear expectations, and ensure a strong mutual fit between the candidate and our company from the very first step.</p>
+                    <div class="flex flex-col items-center">
+                        <div class="w-full max-w-md text-center bg-[#f0f8ff] border-2 border-[#add8e6] rounded-lg p-4 shadow">
+                            <div class="text-2xl">📝</div>
+                            <h3 class="text-lg font-bold text-[#003f5c]">1. Transparent Job Posting</h3>
+                            <p class="text-sm text-gray-600">No tricks. Just an honest description of the role, challenges, and "a day in the life."</p>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="w-full max-w-md text-center bg-[#f0f8ff] border-2 border-[#add8e6] rounded-lg p-4 shadow">
+                            <div class="text-2xl">🤔</div>
+                            <h3 class="text-lg font-bold text-[#374c80]">2. Meaningful Screening</h3>
+                            <p class="text-sm text-gray-600">Candidates answer 1-2 thoughtful, role-related questions instead of following arbitrary rules.</p>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="w-full max-w-md text-center bg-[#f0f8ff] border-2 border-[#add8e6] rounded-lg p-4 shadow">
+                            <div class="text-2xl">💬</div>
+                            <h3 class="text-lg font-bold text-[#7a5195]">3. "Mutual Fit" Recruiter Interview</h3>
+                            <p class="text-sm text-gray-600">A 30-minute conversation focused on skills, goals, and culture, including a relevant work task.</p>
+                        </div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="w-full max-w-md text-center bg-[#f0f8ff] border-2 border-[#add8e6] rounded-lg p-4 shadow">
+                            <div class="text-2xl">🤝</div>
+                             <h3 class="text-lg font-bold text-[#bc5090]">4. Hiring Manager Touchpoint</h3>
+                            <p class="text-sm text-gray-600">A 15-minute chat with the direct team lead to ensure personal and team-level alignment.</p>
+                        </div>
+                         <div class="flow-arrow">↓</div>
+                        <div class="w-full max-w-md text-center bg-[#e0ffe0] border-2 border-[#90ee90] rounded-lg p-4 shadow">
+                            <div class="text-2xl">🎉</div>
+                             <h3 class="text-lg font-bold text-[#006400]">5. Offer & Onboarding</h3>
+                            <p class="text-sm text-gray-600">An offer is extended to a well-informed candidate who is excited and prepared for day one.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="outcomes">
+                <h2 class="text-3xl font-bold text-center text-[#bc5090] mb-8">Expected Outcomes</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="text-4xl mb-3">✅</div>
+                        <h3 class="text-xl font-bold text-[#003f5c]">Drastically Reduced Attrition</h3>
+                        <p class="text-gray-600 mt-2">By setting clear expectations, we eliminate the "Day 1 Shock" and hire people who want to be here.</p>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="text-4xl mb-3">⭐</div>
+                        <h3 class="text-xl font-bold text-[#7a5195]">Higher Quality of Hires</h3>
+                        <p class="text-gray-600 mt-2">Our process will attract and identify candidates who are not just skilled, but also culturally aligned.</p>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="text-4xl mb-3">😊</div>
+                        <h3 class="text-xl font-bold text-[#ff764a]">Improved Team Morale</h3>
+                        <p class="text-gray-600 mt-2">Recruiters become talent advisors, and hiring managers are more confident in their new team members.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 py-6 border-t">
+            <p class="text-sm text-gray-500">Recruitment Strategy Infographic | Powered by Data-Driven Decisions</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabels(label, maxLength) {
+            if (typeof label !== 'string' || label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const ctx = document.getElementById('attritionChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Left Within 3 Days', 'Stayed Past 1 Week'],
+                datasets: [{
+                    label: 'New Hire Outcome',
+                    data: [80, 20],
+                    backgroundColor: [
+                        '#ef5675',
+                        '#ffa600'
+                    ],
+                    borderColor: [
+                        '#ffffff',
+                        '#ffffff'
+                    ],
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 14,
+                                family: 'Inter'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
